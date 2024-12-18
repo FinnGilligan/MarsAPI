@@ -16,11 +16,11 @@ struct ArticleListView: View {
         ScrollView {
             ForEach(data.response.photos) {photo in
                 Button(action: {
-                    photoURL = photo.image_src ?? ""
+                    photoURL = photo.img_src ?? ""
                     viewState = .webView
                 }, label: {
                     HStack {
-                        AsyncImage(url: URL(string: photo.image_src ?? "")) {
+                        AsyncImage(url: URL(string: photo.img_src ?? "")) {
                             phase in
                             switch phase {
                             case.failure:
@@ -38,7 +38,7 @@ struct ArticleListView: View {
                                 ProgressView()
                             }
                         }
-                        Text("\(photo.id)")
+                        Text("\(photo.id ?? 0)")
                             .padding()
                     }
                 })

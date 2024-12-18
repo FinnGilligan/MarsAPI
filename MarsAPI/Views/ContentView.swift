@@ -12,7 +12,6 @@ struct ContentView: View {
     @State var photoURL: String = ""
     
     var body: some View {
-        Text("hi")
         if viewState == .search {
             ArticleListView(viewState: $viewState, photoURL: $photoURL)
         }

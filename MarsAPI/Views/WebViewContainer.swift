@@ -16,6 +16,7 @@ struct WebViewContainer: View {
             Button(action: {viewState = .search}, label: {
                 HStack {
                     Text("<-")
+                    Text(photoURL)
                     Spacer()
                 }
             })

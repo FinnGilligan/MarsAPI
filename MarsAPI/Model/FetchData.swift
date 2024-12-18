@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct FetchData {
     var response: Response = Response()
@@ -31,7 +32,7 @@ struct Photo: Codable {
     var id: Int?
     var sol: Int?
     var camera: Camera?
-    var image_src: String?
+    var img_src: String?
     var earth_date: String?
     var rover: Rover?
 }
