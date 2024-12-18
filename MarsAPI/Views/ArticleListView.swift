@@ -20,7 +20,7 @@ struct ArticleListView: View {
                     viewState = .webView
                 }, label: {
                     HStack {
-                        AsyncImage(url: URL(string: photo.img_src ?? "")) {
+                        AsyncImage(url: URL(string: photo.img_src?.replacingOccurrences(of: "http:", with: "https:") ?? "")) {
                             phase in
                             switch phase {
                             case.failure:

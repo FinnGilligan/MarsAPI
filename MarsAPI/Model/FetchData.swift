@@ -11,7 +11,7 @@ import SwiftUI
 struct FetchData {
     var response: Response = Response()
     mutating func getData() async -> String{
-        let URLString = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2017-09-18&api_key=46SgK5xzWzPwJhnSoeWBe9nDIgwWH6wpusUSzjUA"
+        let URLString = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2017-09-18&page=1&api_key=46SgK5xzWzPwJhnSoeWBe9nDIgwWH6wpusUSzjUA"
         
         guard let url = URL(string: URLString) else {return " "}
         
