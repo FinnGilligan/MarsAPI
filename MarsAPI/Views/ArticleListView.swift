@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ArticleListView: View {
     @Binding var viewState: ViewState
-    @State var data: FetchData = FetchData()
+    @Binding var data: FetchData
     @Binding var photoURL: String
     
     var body: some View {
@@ -52,5 +52,5 @@ struct ArticleListView: View {
 }
 
 #Preview {
-    ArticleListView(viewState: .constant(.search), photoURL: .constant(""))
+    ArticleListView(viewState: .constant(.search), data: Binding.constant(FetchData(sol: 0)), photoURL: .constant(""))
 }

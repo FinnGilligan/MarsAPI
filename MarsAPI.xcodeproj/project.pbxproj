@@ -16,6 +16,7 @@
 		3133D6942D10BE4F00A581E8 /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3133D6932D10BE4F00A581E8 /* ArticleListView.swift */; };
 		3133D6972D10BE6600A581E8 /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3133D6962D10BE6600A581E8 /* FetchData.swift */; };
 		3133D6992D10BE8300A581E8 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3133D6982D10BE8300A581E8 /* ViewState.swift */; };
+		3133D69D2D13848400A581E8 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3133D69C2D13848400A581E8 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		3133D6932D10BE4F00A581E8 /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
 		3133D6962D10BE6600A581E8 /* FetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
 		3133D6982D10BE8300A581E8 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		3133D69C2D13848400A581E8 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				3133D68D2D10BE0400A581E8 /* ContentView.swift */,
 				3133D68F2D10BE1500A581E8 /* WebViewContainer.swift */,
 				3133D6932D10BE4F00A581E8 /* ArticleListView.swift */,
+				3133D69C2D13848400A581E8 /* SearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				3133D6992D10BE8300A581E8 /* ViewState.swift in Sources */,
 				3133D6972D10BE6600A581E8 /* FetchData.swift in Sources */,
 				3133D6942D10BE4F00A581E8 /* ArticleListView.swift in Sources */,
+				3133D69D2D13848400A581E8 /* SearchView.swift in Sources */,
 				3133D6902D10BE1500A581E8 /* WebViewContainer.swift in Sources */,
 				3133D68E2D10BE0400A581E8 /* ContentView.swift in Sources */,
 				3133D67D2D10BDA900A581E8 /* MarsAPIApp.swift in Sources */,
