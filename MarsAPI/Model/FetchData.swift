@@ -11,17 +11,19 @@ import SwiftUI
 struct FetchData {
     var response: Response
     
-    var rover: String
+    var cam: String
     var sol: Int
+    var page: Int
     
-    init(rover: String, sol: Int) {
+    init(cam: String, sol: Int, page: Int) {
         self.response = Response()
-        self.rover = rover
+        self.cam = cam
         self.sol = sol
+        self.page = page
     }
     
     mutating func getData() async -> String{
-        let URLString = "https://api.nasa.gov/mars-photos/api/v1/rovers/\(rover.lowercased())/photos?sol=\(sol)&page=1&api_key=46SgK5xzWzPwJhnSoeWBe9nDIgwWH6wpusUSzjUA"
+        let URLString = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=\(sol)&page=1&camera=\(cam)&api_key=46SgK5xzWzPwJhnSoeWBe9nDIgwWH6wpusUSzjUA"
         
         guard let url = URL(string: URLString) else {return " "}
         
