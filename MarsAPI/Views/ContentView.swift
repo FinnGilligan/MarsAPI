@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var data: FetchData = FetchData(sol: 0)
+    @State var data: FetchData = FetchData(rover: "Curiosity", sol: 0)
     @State var viewState: ViewState = .search
     @State var photoURL: String = ""
+    @State var rover: String = "curiosity"
     @State var dateNum: String = "0"
     
     var body: some View {
         if viewState == .search {
-            SearchView(viewState: $viewState, data: $data, photoURL: $photoURL, dateNum: $dateNum)
+            SearchView(viewState: $viewState, data: $data, photoURL: $photoURL, rover: $rover, dateNum: $dateNum)
         }
         
         else if viewState == .imageList {

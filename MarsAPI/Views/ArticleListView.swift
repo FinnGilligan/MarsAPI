@@ -20,6 +20,7 @@ struct ArticleListView: View {
                     viewState = .webView
                 }, label: {
                     HStack {
+                        Text(photoURL)
                         AsyncImage(url: URL(string: photo.img_src?.replacingOccurrences(of: "http:", with: "https:") ?? "")) {
                             phase in
                             switch phase {
@@ -52,5 +53,5 @@ struct ArticleListView: View {
 }
 
 #Preview {
-    ArticleListView(viewState: .constant(.search), data: Binding.constant(FetchData(sol: 0)), photoURL: .constant(""))
+    ArticleListView(viewState: .constant(.search), data: Binding.constant(FetchData(rover: "curiosity", sol: 0)), photoURL: .constant(""))
 }
