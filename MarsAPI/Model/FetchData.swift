@@ -13,17 +13,15 @@ struct FetchData {
     
     var cam: String
     var sol: Int
-    var page: Int
     
-    init(cam: String, sol: Int, page: Int) {
+    init(cam: String, sol: Int) {
         self.response = Response()
         self.cam = cam
         self.sol = sol
-        self.page = page
     }
     
     mutating func getData() async -> String{
-        let URLString = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=\(sol)&page=1&camera=\(cam)&api_key=46SgK5xzWzPwJhnSoeWBe9nDIgwWH6wpusUSzjUA"
+        let URLString = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=\(sol)&camera=\(cam)&api_key=46SgK5xzWzPwJhnSoeWBe9nDIgwWH6wpusUSzjUA"
         
         guard let url = URL(string: URLString) else {return " "}
         

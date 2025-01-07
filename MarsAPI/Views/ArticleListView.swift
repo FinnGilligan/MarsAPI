@@ -11,7 +11,6 @@ struct ArticleListView: View {
     @Binding var viewState: ViewState
     @Binding var data: FetchData
     @Binding var photoURL: String
-    @Binding var page: Int
 
     
     var body: some View {
@@ -19,9 +18,8 @@ struct ArticleListView: View {
             viewState = .search
         }, label:{
             Text("back")
-        }
+        })
         
-        )
         ScrollView {
             ForEach(data.response.photos) {photo in
                 Button(action: {
@@ -62,5 +60,5 @@ struct ArticleListView: View {
 }
 
 #Preview {
-    ArticleListView(viewState: .constant(.search), data: Binding.constant(FetchData(cam: "fhaz", sol: 0, page: 1)), photoURL: .constant(""), page: .constant(1))
+    ArticleListView(viewState: .constant(.search), data: Binding.constant(FetchData(cam: "fhaz", sol: 0)), photoURL: .constant(""))
 }

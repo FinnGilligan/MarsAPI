@@ -15,9 +15,16 @@ struct SearchView: View {
     @Binding var dateNum: String
     
     var body: some View {
-        TextField("Mission Date (sols):", text: $dateNum)
-        TextField("Camera (fhaz):", text: $cam)
         
+        HStack {
+            TextField("Mission Date (sols):", text: $dateNum)
+                .multilineTextAlignment(.center)
+        }
+        
+        HStack {
+            TextField("Camera (FHAZ, RHAZ, MAHLI, NAVCAM, etc.):", text: $cam)
+                .multilineTextAlignment(.center)
+        }
         
         Button(action: {
             data = FetchData(cam: cam ?? "fhaz", sol: Int(dateNum) ?? 0)
@@ -25,9 +32,10 @@ struct SearchView: View {
         }, label: {
             Text("Search")
         })
+        
     }
 }
 
 #Preview {
-    SearchView(viewState: .constant(.search), data: Binding.constant(FetchData(cam: "fhaz", sol: 0, page: 1)), photoURL: .constant(""), cam: .constant("fhaz"), dateNum: .constant("0"))
+    SearchView(viewState: .constant(.search), data: Binding.constant(FetchData(cam: "fhaz", sol: 0)), photoURL: .constant(""), cam: .constant("fhaz"), dateNum: .constant("0"))
 }
