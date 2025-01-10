@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		312DB5302D303F0200B8B860 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312DB52F2D303F0200B8B860 /* Constants.swift */; };
 		3133D67D2D10BDA900A581E8 /* MarsAPIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3133D67C2D10BDA900A581E8 /* MarsAPIApp.swift */; };
 		3133D6812D10BDAA00A581E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3133D6802D10BDAA00A581E8 /* Assets.xcassets */; };
 		3133D6842D10BDAA00A581E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3133D6832D10BDAA00A581E8 /* Preview Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		312DB52F2D303F0200B8B860 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3133D6792D10BDA900A581E8 /* MarsAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3133D67C2D10BDA900A581E8 /* MarsAPIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsAPIApp.swift; sourceTree = "<group>"; };
 		3133D6802D10BDAA00A581E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				3133D6962D10BE6600A581E8 /* FetchData.swift */,
 				3133D6982D10BE8300A581E8 /* ViewState.swift */,
+				312DB52F2D303F0200B8B860 /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				3133D6902D10BE1500A581E8 /* WebViewContainer.swift in Sources */,
 				3133D68E2D10BE0400A581E8 /* ContentView.swift in Sources */,
 				3133D67D2D10BDA900A581E8 /* MarsAPIApp.swift in Sources */,
+				312DB5302D303F0200B8B860 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

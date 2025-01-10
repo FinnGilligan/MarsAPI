@@ -17,42 +17,46 @@ struct ArticleListView: View {
         Button(action: {
             viewState = .search
         }, label:{
-            Text("back")
+            Text("Back")
         })
         
         ScrollView {
-            ForEach(data.response.photos) {photo in
-                Button(action: {
-                    photoURL = photo.img_src ?? ""
-                    viewState = .webView
-                }, label: {
-                    HStack {
-                        Text(photoURL)
-                        AsyncImage(url: URL(string: photo.img_src?.replacingOccurrences(of: "http:", with: "https:") ?? "")) {
-                            phase in
-                            switch phase {
-                            case.failure:
-                                (Image("fnf").resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding())
-                                
-                            case.success(let image):
-                                image.resizable()
+            if(!data.response.photos.isEmpty) {
+                ForEach(data.response.photos) {photo in
+                    Button(action: {
+                        photoURL = photo.img_src ?? ""
+                        viewState = .webView
+                    }, label: {
+                        HStack {
+                            AsyncImage(url: URL(string: photo.img_src?.replacingOccurrences(of: "http:", with: "https:") ?? "")) {
+                                phase in
+                                switch phase {
+                                case.failure:
+                                    (Image("fnf").resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .cornerRadius(10)
-                                    .padding()
-                                
-                            default:
-                                ProgressView()
+                                    .padding())
+                                    
+                                case.success(let image):
+                                    image.resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .cornerRadius(10)
+                                        .padding()
+                                    
+                                default:
+                                    ProgressView()
+                                }
                             }
+                            Text("\(photo.id ?? 0)")
+                                .padding()
                         }
-                        Text("\(photo.id ?? 0)")
-                            .padding()
-                    }
-                })
-                
-                
+                    })
+                }
             }
+            
+            else {
+                Text("Sorry! No photos have loaded from the \(data.cam.uppercased()) camera at mission date \(data.sol).")
+            }
+            
         }.task {
             await data.getData()
         }
