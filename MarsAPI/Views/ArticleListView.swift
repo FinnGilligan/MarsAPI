@@ -63,7 +63,7 @@ struct ArticleListView: View {
                         }
                         
                         else {
-                            Text("Sorry! No photos have loaded from the \(data.cam.uppercased()) camera at mission date \(data.sol).")
+                            Text("Sorry! No photos have loaded from the \(data.cam.uppercased()) camera at mission date \(data.month)-\(data.day)-\(data.year).")
                                 .frame(width:300, height: 100)
                                 .multilineTextAlignment(.center)
                         }
@@ -99,5 +99,5 @@ struct ArticleListView: View {
 }
 
 #Preview {
-    ArticleListView(viewState: .constant(.search), data: Binding.constant(FetchData(cam: "fhaz", sol: 0)), photoURL: .constant(""))
+    ArticleListView(viewState: .constant(.search), data: Binding.constant(FetchData(cam: "fhaz", year: 2015, month: 06, day: 03)), photoURL: .constant(""))
 }

@@ -74,5 +74,5 @@ struct WebViewContainer: View {
 }
 
 #Preview {
-    WebViewContainer(viewState: .constant(.webView), data: Binding.constant(FetchData(cam: "fhaz", sol: 0)), photoURL: .constant(""))
+    WebViewContainer(viewState: .constant(.webView), data: Binding.constant(FetchData(cam: "fhaz", year: 2015, month: 06, day: 03)), photoURL: .constant(""))
 }

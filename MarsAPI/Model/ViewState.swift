@@ -8,7 +8,7 @@
 import Foundation
 
 enum ViewState {
-    case search, webView, imageList
+    case search, webView, imageList, information
     //choose which rover, which date, which camera
 }
 

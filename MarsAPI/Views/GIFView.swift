@@ -6,7 +6,7 @@ struct GIFView: UIViewRepresentable {
 
     func makeUIView(context: Context) -> UIImageView {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill // Adjust as needed
+        imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         return imageView
     }
@@ -32,7 +32,6 @@ struct GIFView: UIViewRepresentable {
             uiView.startAnimating()
         }
 
-        // Force the frame to match the SwiftUI-defined size
         DispatchQueue.main.async {
             if let superview = uiView.superview {
                 uiView.frame = superview.bounds

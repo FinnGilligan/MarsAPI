@@ -12,13 +12,29 @@ struct SearchView: View {
     @Binding var data: FetchData
     @Binding var photoURL: String
     @Binding var cam: String
-    @Binding var dateNum: String
+    @Binding var monthNum: String
+    @Binding var dayNum: String
+    @Binding var yearNum: String
     
     var body: some View {
         ZStack {
             Image("earth")
             VStack {
                 Spacer()
+                
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        viewState = .information
+                    }, label:{
+                        Text("More Info")
+                    })
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                }
+                
                 Spacer()
                 Spacer()
                 
@@ -41,9 +57,21 @@ struct SearchView: View {
                 }
                 
                 HStack {
-                    TextField("Mission Date (sols):", text: $dateNum, prompt: Text("Mission Date (sols):").foregroundColor(.fontGrey))
+                    TextField("MM", text: $monthNum, prompt: Text("MM").foregroundColor(.fontGrey))
                         .multilineTextAlignment(.center)
-                        .frame(width: 300, height: 30)
+                        .frame(width: 50, height: 30)
+                        .background(Color.searchbarGrey)
+                        .cornerRadius(8.0)
+                        .foregroundColor(Color.fontGrey)
+                    TextField("DD", text: $dayNum, prompt: Text("DD").foregroundColor(.fontGrey))
+                        .multilineTextAlignment(.center)
+                        .frame(width: 50, height: 30)
+                        .background(Color.searchbarGrey)
+                        .cornerRadius(8.0)
+                        .foregroundColor(Color.fontGrey)
+                    TextField("YYYY", text: $yearNum, prompt: Text("YYYY").foregroundColor(.fontGrey))
+                        .multilineTextAlignment(.center)
+                        .frame(width: 70, height: 30)
                         .background(Color.searchbarGrey)
                         .cornerRadius(8.0)
                         .foregroundColor(Color.fontGrey)
@@ -54,7 +82,8 @@ struct SearchView: View {
                 Spacer()
                 
                 Button(action: {
-                    data = FetchData(cam: cam ?? "fhaz", sol: Int(dateNum) ?? 0)
+                    data = FetchData(cam: cam ?? "fhaz", year: Int(yearNum) ?? 0, month: Int(monthNum) ?? 0, day: Int(dayNum) ?? 0)
+                    print(data.response)
                     viewState = .imageList
                 }, label: {
                     Text("Liftoff!")
@@ -72,5 +101,5 @@ struct SearchView: View {
 }
 
 #Preview {
-    SearchView(viewState: .constant(.search), data: Binding.constant(FetchData(cam: "fhaz", sol: 0)), photoURL: .constant(""), cam: .constant("fhaz"), dateNum: .constant("0"))
+    SearchView(viewState: .constant(.search), data: Binding.constant(FetchData(cam: "fhaz", year: 2015, month: 06, day: 03)), photoURL: .constant(""), cam: .constant("fhaz"), monthNum: .constant(""), dayNum: .constant(""), yearNum: .constant(""))
 }
