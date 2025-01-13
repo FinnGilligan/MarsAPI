@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WebViewContainer: View {
     @Binding var viewState: ViewState
+    @Binding var data: FetchData
     @Binding var photoURL: String
     
     var body: some View {
@@ -58,11 +59,20 @@ struct WebViewContainer: View {
                         ProgressView()
                     }
                 }
+                
+                Text("Camera: \(data.cam.uppercased())")
+                ForEach(data.response.photos) {photo in
+                    if(photo.img_src == photoURL) {
+                        Text("Image ID: \(photo.id ?? -1)")
+                        Text("Earth Date: \(photo.earth_date ?? "N/A")")
+                        Text("Mission Date (sols): \(photo.sol ?? -1)")
+                    }
+                }
             }
         }
     }
 }
 
 #Preview {
-    WebViewContainer(viewState: .constant(.webView), photoURL: .constant(""))
+    WebViewContainer(viewState: .constant(.webView), data: Binding.constant(FetchData(cam: "fhaz", sol: 0)), photoURL: .constant(""))
 }

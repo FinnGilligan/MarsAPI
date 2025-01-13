@@ -24,7 +24,7 @@ struct ContentView: View {
         }
         
         else {
-            WebViewContainer(viewState: $viewState, photoURL: $photoURL)
+            WebViewContainer(viewState: $viewState, data: $data, photoURL: $photoURL)
         }
     }
 }
